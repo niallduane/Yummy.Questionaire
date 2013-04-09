@@ -1,0 +1,16 @@
+﻿@model MVCQuestionaire.Models.User
+
+@{
+    ViewBag.Title = "Completed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test Completed</h2>
+<p>
+    Thank you @Model.Name,
+</p>
+<p>
+    If you are unhappy with your test, you can complete it again by
+    @Html.ActionLink("Clicking here", "Index", new { id = Model.UserId }).
+</p>
+

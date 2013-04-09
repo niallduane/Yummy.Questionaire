@@ -1,0 +1,23 @@
+﻿@model MVCQuestionaire.Models.Question
+@{
+    var q = Request.Form[Model.QuestionId.ToString()];
+
+    string error = "";
+    if (ViewData.ModelState[Model.QuestionId.ToString()] != null)
+    {
+        error = (ViewData.ModelState[Model.QuestionId.ToString()].Errors.Count() > 0) ? " input-validation-error" : "";
+    }
+}              
+
+<div class="editor-label @error">
+    <p>@Model.Question1</p>
+    <ul>
+    @foreach (var option in Model.QuestionOptions)
+    {
+        var check = (((q != null) && (int.Parse(q) == option.QuestionOptionId)) ? "checked" : "");
+        <li>
+            <input name="@option.QuestionId" type="radio" value="@option.QuestionOptionId" title="@option.Description" @check />@option.Description
+        </li>
+    }
+    </ul>
+</div>
