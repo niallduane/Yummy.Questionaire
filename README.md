@@ -15,7 +15,7 @@ This is the project I produced for them.
 4. Build and run the solution.
 
 ###Database Design
-![Schema](/QuestionDBSchema.jpg)
+![Schema](QuestionDBSchema.jpg)
 
 ###User Interface
 ![page1](Page1.jpg)
